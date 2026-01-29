@@ -1,33 +1,26 @@
+// App.jsx
+import React from 'react';
+import Navbar from './components/Navber/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Skills from './components/Skills/Skills';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Projects from './components/Projects/Projects';
 
-import './App.css'
-import Countries from './components/countries/Countries'
-import { Suspense } from 'react'
 
 function App() {
-
-  const countriesPromise = fetch("https://openapi.programming-hero.com/api/all")
-  .then(res=>res.json());
-  
-
   return (
-    <>
-    <div className="body-align"> 
-    <h1>Country</h1>
-    <p>From sources across the web</p>
-
-
-    <div className="countries-list">
-
-      <Suspense fallback={<h3>Countries Data Loading.......</h3>}>
-        <Countries countriesPromise={countriesPromise}></Countries>
-      </Suspense>
+    <div className="font-sans bg-gray-50 text-gray-800">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
-      
-    </div>
-      
-  
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
